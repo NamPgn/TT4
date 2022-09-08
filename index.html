@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="https://cdn.inevn.com/js/jquery.main.isj"></script>
+    <link rel="stylesheet" href="./src/css/include.main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdn.inevn.com/js/include.core.isj"></script>
+    <script type="text/javascript">
+        var data = {
+            data_2: [
+                {
+                    id: 1,
+                    title: 'Tuyển sinh viên tham gia chương trình Giao lưu Thanh niên Thía Lan - Việt Nam',
+                    img: "./Images/141127_phu_nhan_TT_Thai_Lan_09.JPG",
+                    p: "Phu nhân thủ tướng vương quốc thái lan thăm trường ĐH Hà Nội(Spouse of Thia Prime Minister visist Hanu)"
+                },
+                {
+                    id: 2,
+                    title: 'Tuyển sinh viên tham gia chương trình Giao lưu Thanh niên Thía Lan - Việt Nam',
+                    img: "./Images/141127_phu_nhan_TT_Thai_Lan_09.JPG",
+                    p: "Phu nhân thủ tướng vương quốc thái lan thăm trường ĐH Hà Nội(Spouse of Thia Prime Minister visist Hanu)"
+                },
+                {
+                    id: 3,
+                    title: 'Tuyển sinh viên tham gia chương trình Giao lưu Thanh niên Thía Lan - Việt Nam',
+                    img: "./Images/141127_phu_nhan_TT_Thai_Lan_09.JPG",
+                    p: "Phu nhân thủ tướng vương quốc thái lan thăm trường ĐH Hà Nội(Spouse of Thia Prime Minister visist Hanu)"
+                },
+            ],
+            data_3: [
+                {
+                    id: 1,
+                    icon: "./Images/az.png",
+                    tt: "Liên kết đào tạo",
+                    img: "./Images/inline_image_preview.jpg"
+                },
+                {
+                    id: 2,
+                    icon: "./Images/az.png",
+                    tt: "Trao đổi sinh viên ",
+                    img: "./Images/53309068_2375749555769577_6659678522837041152_n.jpg"
+                },
+                {
+                    id: 3,
+                    icon: "./Images/az.png",
+                    tt: "Giao lưu - Hợp tác quốc tế",
+                    img: "./Images/14022181_1292043797473497_4975782198767528578_n.jpg"
+                },
+            ],
+            data_3: [
+                {
+                    id: 1,
+                    img: "./Images/23405784_1749582418386297_1037230652946651258_o.jpg",
+                    text: "Hoạt động thường niên"
+                },
+                {
+                    id: 2,
+                    img: "./Images/128173359_3849886881689163_2740632311308295589_n.jpg",
+                    text: "Lễ hội Loy Krathong Hanu"
+                },
+                {
+                    id: 3,
+                    img: "./Images/128349407_3849887738355744_639658824471914912_n.jpg",
+                    text: "Trải nghiệm Tìm hiểu văn hóa Thái lan"
+                },
+                {
+                    id: 4,
+                    img: "./Images/ii.jpg",
+                    text: "Lễ hội Son kran"
+                }
+            ]
+        }
+
+
+
+
+        var a = data.data_2.map(function (value, index) {
+            return $("<div>", { text: value.id });
+            return index;
+        });
+        console.log(a);
+        $(function () {
+
+            tảiTrước({
+                dữLiệu: {
+                    js: ['package.hanu'],
+                    css: ['package.css']
+                },
+                biểuTượng: "https://i3.wp.com/cdn.inevn.com/img/serp-white.png",
+                chờ: 1,
+                koChe: false,
+                màuNền: "#673ab7",
+                riêng: true,
+                cache: true,
+                trước: function () {
+
+                },
+
+                xong: function () {
+                    $.each({
+                        0: function () {
+                            $(".header").empty().append( // prepend
+                                // $("<a>", {
+                                // 	class: "fwb tac lh15 bấmĐc",
+                                // 	href: "/c/1/CM",
+                                // 	text: "Chuyên mục"
+                                // }),
+                                // "Xin chào tất cả các bạn",
+                                // `<div class="fwb">HTML</div>`,
+                                $("<div>", { class: "header_conten back_cl_main df pa15" }).append(
+                                    $("<div>", { class: "col-md-8 df aic" }).append(
+                                        $("<div>", {
+                                            class: "header_icon wmx50 ",
+                                            id: "b",
+                                        }).append($("<img />", { src: "./Images/logo.png", class: "w1" })),
+                                        $("<div>", {
+                                            class: "header_title",
+                                        }).append($("<div>", { class: "header_title cl_main_2 fwb fs15", html: "Trường đại học hà nội" }).css({ "margin-left": "10px" })),
+                                    ),
+                                    $("<div>", { class: "df aic gap_20" }).append(
+                                        $("<div>", {
+                                            class: "header_lh",
+                                        }).append($("<a>", { href: "#", class: "header_lh_content cl_main_2 fwb", html: "Liên hệ" })),
+                                        $("<div>", {
+                                            class: "header_auth ",
+                                        }).append($("<a>", { href: "#", class: "header_auth_ct ", html: "Đăng nhập" })),
+                                        $("<div>", { class: "logo_b wmx20" }).append($("<img />", { src: "./Images/b.png", class: "w1" })),
+                                        $("<div>", {
+                                            class: "header_location df gap_10",
+                                        }).append($("<div>", { class: "header_location_img wmx50" }).append($("<img />", { src: "./Images/2000px-Flag_of_Vietnam.svg_.png", class: "w1" })))
+                                            .append($("<div>", { class: "header_location_img wmx50" }).append($("<img />", { src: "./Images/thái lan.png", class: "w1" }))),
+                                    )
+
+                                ), $("<div>", { class: "header_banner" }).empty().append(
+                                    $("<div>", { class: "header_banner_conten h400 relative" }).append(
+                                        $("<img />", { src: "./Images/ve_dep_thai_lan.jpg", class: "w1 h1 ofc irp z-1" })
+                                    ).append($("<div>", { class: "pa tt t50 l50 w1 tac tt_banner pa25" }).append($("<p>", { class: "fs50 fwb cl_main_2 ls2", html: "TRUNG TÂM NGÔN NGỮ VÀ VĂN HÓA THÁI LAN </br> Thai Studies Center " })))
+
+                                ), $($("<div>", { class: "menu" })
+                                    .append(
+                                        $($("<div>", { class: "meu_conten" })).append($("<div>", {
+                                            class: "menu_item tac pa15 bf ",
+                                        }).append($("<ul>", { class: "df jcsa aic" }).append($("<div>", { class: "menu_icon  ", html: "" })
+                                            .append($("<i>", { class: "fa-solid fa-house fs20" })))
+                                            .append($("<li>", { class: " fs20 ttu fwb", html: "Giới thiệu" }))
+                                            .append($("<li>", { class: " fs20 ttu fwb", html: "Tin tức - sự kiện" }))
+                                            .append($("<li>", { class: " fs20 ttu fwb", html: "Đào tạo" }))
+                                            .append($("<li>", { class: " fs20 ttu fwb", html: "hoạt động ngoại khóa" }))
+                                            .append($("<li>", { class: " fs20 ttu fwb", html: "Dịch vụ" }))
+                                            .append($("<li>", { class: " fs20 ttu fwb", html: "Tuyển dụng" }))
+                                            .append($("<div>", { class: "menu_seach " }).css({ "border-bottom": "2px solid" })
+                                                .append($("<input/>", { class: "bdn seach fs085 on", placeholder: "Tìm kiếm", type: "text" }).css({ "width": "73px" })).append($("<i />", { class: "fa-solid fa-magnifying-glass" })))
+                                        ))
+                                    )
+                                )
+
+                            ),
+
+                                $(".banner").empty().append(
+                                    $("<section />", { class: "tt_sk" }).append(
+                                        $("<div>", { class: "title tac pa35" }).css({ "background": "#FEEACF" }).append(
+                                            $("<a>", { class: "fs20 cf back_ln ttu pa15 fwb ls2 ", href: "#", html: "Tin tức và sự kiện" })
+                                        )
+                                    ).append(
+                                        $("<div>", { class: "tt_sk_ct ofc w1 bgrn bgsc relative oyh df" }).append(
+                                            $("<div>", { class: "ttt_sk_item  pa t0 pa25 col-xs-7 col-md-7 col-lg-7 back_cl_main h1" }).css({
+                                                "opacity": ".9"
+                                            }).append(
+                                                data.data_2.map(function (value, index) {
+                                                    return $("<div>", { class: "_blog " + (index < data.data_2.length - 1 ? 'mb25' : ''), id: value.id }).append(
+                                                        $("<div>", { class: "blog df ait gap_20", html: "" }).append(
+                                                            $("<div>", { class: "col-md-5" }).append(
+                                                                $("<div>", { class: "blog_img pb169 bgsc bgpc bgrn" }).css({
+                                                                    backgroundImage: 'url(' + value.img + ')'
+                                                                })
+                                                            ),
+                                                            $("<div>", { class: "blog_text" }).append(
+                                                                $("<div>", { class: "cf fwb", html: value.title }),
+                                                                $("<p>", { class: "cf mt15", html: value.p })
+                                                            )
+                                                        ),
+                                                    );
+                                                })
+                                            ),
+                                            $("<div>", { class: "sk col-xs-5  col-md-5 col-lg-5 " }).append(
+                                                $("<div>", { class: "sk_img_conten df jcsa" }).append(
+                                                    $("<div>", { class: "sk_img_item tac  w70 pa25" }).append(
+                                                        $("<div>", { class: "sk_tt cl_3", html: "Trại hè Thái Lan 2021" }),
+                                                        $("<p>", { class: "text_sk cl_3", html: "Chương trình do trưng tâm Ngôn Ngữ và văn hóa Thái lan, </br> trường đại học Hà Nội phối hợp cùng Đại Rangist tổ </br> chức" }),
+                                                        $("<button>", { html: "Tham gia ", class: "bdn cf fs20 pa15 back_3 bra18 mt15" })
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                ).append($("<div>", { class: "banner_dt" }).append(
+                                    $("<div>", { class: "banner_dt_conten df gap_40 pa40" }).append(
+                                        $("<div>", { class: "ct_dt_item col-md-7 col-xs-7 col-lg-7" }).append(
+                                            $("<div>", { class: "title tac pa3 " }).append(
+                                                $("<div>", { class: "fs20 cf back_ln ttu pa15 fwb ls2 ", text: "Chương trình đào tạo" }),
+                                                $("<div>", { class: "conten_dt df aic pa25 bsc1 bgcf gap_20" }).append(
+                                                    $("<div>", { class: "nn col-md-6 mt30" }).append(
+                                                        $("<div>", { class: "nn_conten cf pa50 relative" }).append(
+                                                            $("<div>", { class: "nn_ttile fs20 fwb mt15", text: "Ngoại Ngữ 2" }),
+                                                            $("<div>", { class: "nn_text ptb15", html: "Đào tạo kiến thức và kỹ năng giao tiếp Tiếng Thái ở mức độ cơ bản, ứng </br> dụng vào thức tế" }),
+                                                            $("<a>", { class: "btn_nn fsi pa5 ", text: "Xem ngay" }),
+                                                            $("<div>", { class: "nn_icon pa t0 l50 tt pa35 bgcf cl_main " }).css({ "border-radius": "100%", "border": "1px solid #FBA627" }).append(
+                                                                $("<i>", { class: "fa-brands fa-twitter fs20" })
+                                                            )
+                                                        )
+                                                    ),
+                                                    $("<div>", { class: "nn col-md-6 mt30" }).append(
+                                                        $("<div>", { class: "nn_conten cf pa50 relative" }).append(
+                                                            $("<div>", { class: "nn_ttile fs20 fwb mt15", text: "Ngoại Ngữ 2" }),
+                                                            $("<div>", { class: "nn_text ptb15", html: "Đào tạo kiến thức và kỹ năng giao tiếp Tiếng Thái ở mức độ cơ bản, ứng </br> dụng vào thức tế" }),
+                                                            $("<a>", { class: "btn_nn fsi pa5 ", text: "Xem ngay" }),
+                                                            $("<div>", { class: "nn_icon pa t0 l50 tt pa35 bgcf cl_main " }).css({ "border-radius": "100%", "border": "1px solid #FBA627" }).append(
+                                                                $("<i>", { class: "fa-solid fa-gift fs20" })
+                                                            )
+                                                        )
+                                                    ),
+                                                )
+                                            )
+                                        ),
+                                        $("<div>", { class: "ct_dt_item col-md-5 col-xs-5 col-lg-5" }).append(
+                                            $("<div>", { class: "title tac pa3 " }).append(
+                                                $("<div>", { class: "fs20 cf back_ln ttu pa15 fwb ls2 ", text: "Chương trình đào tạo" }),
+                                                $("<div>", { class: "img_kh relative" }).css({ "height": "330px" }).append(
+                                                    $("<img>", { class: "w1 h1 ofc", src: "./Images/128173359_3849886881689163_2740632311308295589_n.jpg" }),
+                                                    $("<div>", { class: "hoithao pa b0 l50 tt cf fs20 fwb", text: "Hội thảo Giảng viên quý I năm 2021" }).css(
+                                                        {
+                                                            "border-bottom": "2px solid #fff", "margin-bottom": "20px", "text-shadow": " 0 0 36px #000"
+                                                        }),
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                    $("<section />", { class: "tt_sk" }).append(
+                                        $("<div>", { class: "title tac pa35" }).css({ "background": "#FEEACF" }).append(
+                                            $("<a>", { class: "fs20 cf back_ln ttu pa15 fwb ls2 ", href: "#", html: "Hợp tác quốc tế" }),
+                                            $("<div>", { class: "htqt_conten df gap_30 mt40" }).append(
+                                                data.data_3.map(function (v, i) {
+                                                    return $("<div>", { class: "htqt_item col-md-4" }).append(
+                                                        $("<div>", { class: "htqt_img " }).append(
+                                                            $("<img>", { class: "w1 h300 ofc", src: v.img }),
+                                                            $("<div>", { class: "htqt_text df aic jcsc mt25 " }).append(
+                                                                $("<img>", { class: "htqt_icon w1 wmx20", src: v.icon }),
+                                                                $("<div>", { class: "text_htqt cl_main_2 fs20 fwb", text: v.tt })
+                                                            )
+                                                        )
+                                                    )
+                                                })
+                                            )
+                                        )
+                                    ),
+                                    $("<section />", { class: "tt_sk pa15" }).append(
+                                        $("<div>", { class: "title tac pa35" }).append(
+                                            $("<a>", { class: "fs20 cf back_ln ttu pa15 fwb ls2 ", href: "#", html: "Hoạt động ngoại khóa" })
+                                        ),
+                                        $("<div>", { class: "n w1 back_ln" }).css({ "height": "2px" }),
+                                        $("<div>", { class: "hd_conten df gap_20 mtb50" }).append(
+                                            data.data_3.map(function (i) {
+                                                return $("<div>", { class: "hd_item col-md-3 gap_20" }).append(
+                                                    $("<div>", { class: "img_kh relative" }).css({ "height": "300px" }).append(
+                                                        $("<img>", { class: "w1 h1 ofc", src: i.img }),
+                                                        $("<div>", { class: "pa b0 w1 tt l50" }).append(
+                                                            $("<div>", { class: "hoithao   tac  cf fs20 fwb", text: i.text }).css(
+                                                                {
+                                                                    "margin-bottom": "20px", "text-shadow": " 0 0 36px #000",
+                                                                }
+                                                            ),
+                                                            $("<div>", { class: "bgcf pa l50 tt" }).css({ "height": "2px", "width": "100px" })
+                                                        )
+                                                    )
+                                                )
+                                            })
+                                        ),
+                                        $("<div>", { class: "n w1 back_ln" }).css({ "height": "2px" }),
+                                    ),
+                                    $("<div>", { class: "banner_dt_conten df gap_40 pa40" }).append(
+                                        $("<div>", { class: "ct_dt_item col-md-3 col-xs-3 col-lg-3 bsc1 " }).append(
+                                            $("<div>", { class: "title tac pa3 pa10" }).append(
+                                                $("<div>", { class: "fs20 cf back_ln ttu pa15 fwb ls2 ", text: "Cơ hội việc làm" }),
+                                                $("<div>", { class: "img_kh relative" }).css({ "height": "330px" }).append(
+                                                    $("<img>", { class: "w1 h1 ofc", src: "./Images/360_F_350098957_BS314k2vqjKKaoacMicZd76SmQQfzeX0.jpg" }),
+                                                )
+                                            )
+                                        ),
+                                        $("<div>", { class: "ct_dt_item col-md-9 col-xs-9 col-lg-9 bsc1" }).append(
+                                            $("<div>", { class: "title tac pa3 " }).append(
+                                                $("<div>", { class: "fs20 cf back_ln_2 ttu pa15 fwb ls2 ", text: "Dịch vụ" }),
+                                                $("<div>", { class: "blog_kh" }).append(
+                                                    $("<div>", { class: "blog_hk_conten df gap_30 pa25" }).append(
+                                                        $("<div>", { class: "blog_kh_item col-md-6 relative bsc1" }).append(
+                                                            $("<img>", { class: "w1", src: "./Images/Mục Khoá Học.jpg" }),
+                                                            $("<div>", { class: "kh_tt pa pa25 t50 l50 tt w1 bgcf" }).append(
+                                                                $("<div>", { class: "fs30 fwb cl_3 tac", text: "Khóa học " })
+                                                            )
+                                                        ),
+                                                        $("<div>", { class: "blog_kh_item col-md-6 relative bsc1" }).append(
+                                                            $("<img>", { class: "w1", src: "tim-viec-bien-phien-dich-4.jpg" }),
+                                                            $("<div>", { class: "kh_tt pa pa25 t50 l50 tt w1 bgcf" }).append(
+                                                                $("<div>", { class: "fs30 fwb cl_3 tac", text: "Biên - Phiên dịch" })
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    $("<footer>").append(
+                                        $("<div>", { class: "ft_conten back_ln pa40" }).append(
+                                            $("<div>", { class: "ft_item" }).append(
+                                                $("<div>", { class: "df" }).append(
+                                                    $("<div>", { class: "ft_icon wmx1" }).append(
+                                                        $("<img>", { class: "w1", src: "./Images/logo.png" })
+                                                    ),
+                                                    $("<div>", { class: "ft_addr" }).append(
+                                                        $("<ul>", { class: "cf lh2" }).css({"margin":"0px"}).append(
+                                                            $("<li>", { text: "Trường Đại học Hà Nội - Hanoi University" }),
+                                                            $("<li>", { text: "Trung tâm Ngôn ngữ và Văn hóa Thái Lan" }),
+                                                            $("<li>", { html: "Địa chỉ: Phòng 105, Nhà B, Trường Đại học Hà Nội, Km 9, đường Nguyễn Trãi, quận Nam Từ Liêm, Hà Nội, </br> Việt Nam" }),
+                                                            $("<li>", { text: "Tel: (024) 3554 4316" }),
+                                                            $("<li>", { text: "Email: tiengthailan@hanu.edu.vn" }),
+                                                        )
+                                                    )
+                                                ),
+                                                $("<div>", { class: "border" }),
+                                                $("<div>", { class: "bq df aic jcsb mt25" }).append(
+                                                    $("<div>", { class: "bq_text cf", text: "Copyright © 2021 - Trường Đại học Hà Nội. All Rights Reserved | Powered by I&E Corp." }),
+                                                    $("<div>", { class: "icon_ft gap_20 df aic" }).append(
+                                                        $("<div>",{class:"wmx50"}).append(
+                                                            $("<img>", { src: "./Images/12.png", class: "w1" }),
+                                                        ),
+                                                        $("<div>",{class:"wmx50"}).append(
+                                                            $("<img>", { src: "./Images/13.png", class: "w1" }),
+                                                        ),
+                                                        $("<div>",{class:"wmx50"}).append(
+                                                            $("<img>", { src: "./Images/bn.png", class: "w1" }),
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                        },
+                        // Các đường link không được cấu hình
+                        404: function () {
+                            vàoURL("/");
+                        }
+                    }, function (á, à) {
+                        config("url." + á, à);
+                    });
+                    vàoURL();
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+        </div>
+        <div class="banner">
+
+        </div>
+    </div>
+    <img src="" alt="">
+    <script src="./main.js"></script>
+</body>
+
+</html>

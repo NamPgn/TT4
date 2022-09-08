@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name=viewport
+		content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no, minimum-scale=1, height=device-height, viewport-fit=cover" />
+	<meta name="keywords" content="Connections,Social Network" />
+	<title>Hướng dẫn ứng dụng INEVO triển khai website thực tế</title>
+	<meta name="google-site-verification" content="C3rLvOFFbqDi_-BAOFxujRlxlGslP_ggG5n7BIc0P4c" />
+	<meta name="description" content='<?php echo $des; ?>' />
+	<link rel="icon" type="image/png" sizes="32x32" href=''>
+	<link href="sitemap.xml">
+	<link rel="stylesheet" href="https://thuctap.inevn.com/nguyendinhhuy/css/include.sub.css">
+	<script src='https://cdn.inevn.com/js/jquery.main.isj'></script>
+	<script src='https://cdn.inevn.com/js/include.core.isj'></script>
+	<style>
+		.styleScroll::-webkit-scrollbar {
+			width: 12px;
+			background-color: #f5f5f5 !important;
+		}
+
+		.styleScroll::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+			background-color: #999 !important;
+		}
+
+		.fni {
+			float: none;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		.pl0fc:first-child {
+			padding-left: 0;
+		}
+
+		.r15 {
+			right: 15px;
+		}
+
+		.b15 {
+			bottom: 15px;
+		}
+
+		.jcfe {
+			justify-content: flex-end !important;
+		}
+
+		.jcfs {
+			justify-content: flex-start !important;
+		}
+
+		.bgcbd05 {
+			background-color: rgba(0, 19, 70, 0.5);
+		}
+
+		.bgcbd08 {
+			background-color: rgba(0, 19, 70, 0.8);
+		}
+
+		.bg101 {
+			background-color: rgba(139, 0, 0, 0.1);
+		}
+
+		.bgpb {
+			background-position: bottom;
+		}
+
+		.ml-15,
+		.mlr-15 {
+			margin-left: -15px;
+		}
+
+		.mr-15,
+		.mlr-15 {
+			margin-right: -15px;
+		}
+
+		.bs33d {
+			box-shadow: 0 3px 3px #ddd;
+		}
+
+		.bs20d {
+			box-shadow: 0 0 3px #ddd;
+		}
+
+		.bs20d {
+			box-shadow: 1px 1px 20px 0px #ddd;
+		}
+
+		.ts44o3 {
+			text-shadow: 4px 4px .3em #111;
+		}
+
+		.t10p {
+			top: 10px
+		}
+
+		.t40p {
+			top: 40px
+		}
+
+		.h2 {
+			height: 200%
+		}
+
+		.ffca {
+			font-family: Calibri, Arial;
+		}
+
+		.w540 {
+			width: 540px;
+		}
+
+		.mtb11 {
+			margin-top: 11px;
+			margin-bottom: 11px;
+		}
+
+		.vt:after,
+		.vp:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+		}
+
+		.vt:after {
+			width: 3px;
+			left: 0;
+			background-color: #673ab7;
+		}
+
+		.vp:after {
+			width: 1px;
+			right: 0;
+			background-color: white;
+		}
+
+		.gạchChânMenu::after,
+		.gạchChânDòng::after,
+		.chấmT:after {
+			content: "";
+			position: absolute;
+			height: 2px;
+		}
+
+		.gạchChânMenu::after {
+			width: 0;
+			bottom: -5px;
+			left: 50%;
+			transition: .2s;
+			transform: translateX(-50%);
+			background-color: white;
+		}
+
+		.gạchChânDòng::after {
+			width: 100px;
+			bottom: 0;
+			left: 0;
+			background-color: #673ab7;
+		}
+
+		.menuChính:hover>.gạchChânMenu::after {
+			width: 50%;
+			transition: .2s;
+		}
+
+		.chấmT:after {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background-color: #673ab7;
+			left: -15px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.chuyểnNền {
+			transition: color .5s linear;
+		}
+
+		.chuyểnNền::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: auto;
+			right: 0;
+			width: 0;
+			height: 100%;
+			background-color: #673ab7;
+			-webkit-transition: width .5s linear;
+			transition: width .5s linear;
+			z-index: -1;
+		}
+
+		.đgChuyểnNền::after {
+			width: 100%;
+			right: auto;
+			left: 0;
+		}
+
+		.bg3 {
+			background: linear-gradient(90deg, rgba(18, 97, 160, 1) 0%, rgba(56, 149, 211, 1) 100%);
+		}
+
+		.fdsd {
+			filter: drop-shadow(2px 2px 0 #ddd);
+		}
+
+		@media (min-width: 1200px) {
+			.o0-lg {
+				opacity: 0
+			}
+		}
+
+		@media (min-width: 992px) {
+			.dn-md {
+				display: none
+			}
+		}
+
+		@media (max-width: 1199px) {
+			.fs08-lg {
+				font-size: .8em
+			}
+
+			.fs09i-lg {
+				font-size: .9em !important
+			}
+		}
+
+		@media (max-width: 991px) {
+			.tt0i-md {
+				transform: translateY(0%) !important;
+				-webkit-transform: translateY(0%) !important;
+				-moz-transform: translateY(0%) !important;
+				-o-transform: translateY(0%) !important;
+				-ms-transform: translateY(0%) !important;
+			}
+
+			.t0-md {
+				top: 0
+			}
+
+			.h1i-md {
+				height: 100% !important;
+			}
+
+			.col-md-dbi {
+				display: block !important;
+			}
+
+			.ptb10-md {
+				padding-top: 10px !important;
+				padding-bottom: 10px !important;
+			}
+
+			.ptb0-md {
+				padding-top: 0px !important;
+				padding-bottom: 0px !important;
+			}
+
+			.pb43-md {
+				padding-bottom: 75%;
+			}
+
+			.pl15-md {
+				padding-left: 15px;
+			}
+
+			.pr15-md {
+				padding-right: 15px;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.fs07i-sm {
+				font-size: .7em !important
+			}
+
+			.pt15-sm {
+				padding-top: 15px
+			}
+
+			.mlr15-sm {
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+		}
+
+		@media (max-width: 479px) {
+			.lh15-xs {
+				line-height: 1.5;
+			}
+
+			.plr0-xs {
+				padding-right: 0px !important
+			}
+
+			.plr10-xs {
+				padding-right: 10px !important
+			}
+
+			/* .plr15-xs,.pr15-xs {padding-right: 15px!important} */
+			/* .plr15-xs,.pl15-xs {padding-left: 15px!important} */
+			.pb25-xs {
+				padding-bottom: 25px !important
+			}
+
+			/* .pt0-xs {padding-top: 0;} */
+			.pt0i-xs {
+				padding-top: 0 !important;
+			}
+
+			.ptb5-xs {
+				padding-top: 5px !important;
+				padding-bottom: 5px !important;
+			}
+
+			.ptb10-xs {
+				padding-top: 10px !important;
+				padding-bottom: 10px !important;
+			}
+
+			.mtb10-xs {
+				margin-top: 10px !important;
+				margin-bottom: 10px !important;
+			}
+
+			.mt10-xs {
+				margin-top: 10px !important;
+			}
+
+			.mb0-xs {
+				margin-bottom: 0px !important;
+			}
+
+			.mt0-xs {
+				margin-top: 0px !important;
+			}
+
+			.mr0-xs {
+				margin-right: 0px !important;
+			}
+
+			.ml0-xs {
+				margin-left: 0px !important;
+			}
+
+			.mb15-xs {
+				margin-bottom: 15px;
+			}
+
+			.ml-15-xs,
+			.mlr-15-xs {
+				margin-left: -15px;
+			}
+
+			.mr-15-xs,
+			.mlr-15-xs {
+				margin-right: -15px;
+			}
+
+			.ml-10-xs,
+			.mlr-10-xs {
+				margin-left: -10px;
+			}
+
+			.mr-10-xs,
+			.mlr-10-xs {
+				margin-right: -10px;
+			}
+
+			/* .mlr0-xs {margin-right: 0px;} */
+			.ptb15-xs {
+				padding-top: 15px !important;
+			}
+
+			.ptb15-xs {
+				padding-bottom: 15px !important;
+			}
+
+			.fs07-xs {
+				font-size: .7em !important
+			}
+
+			.mlr-10-xs,
+			.ml-10-xs {
+				margin-left: -10px !important;
+			}
+
+			.mlr-10-xs.mr-10-xs {
+				margin-right: -10px !important;
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		var chưaCóCache = true,
+			data = {
+				ụTổng: 8415, // ID chuyên mục tổng của website
+				tinTiêuĐiểm: 5027, // ID tin tiêu điểm
+				// menuChính:[0, 5005, 5006, 5007, 5010, 8909, 8911, 8912, 9009], // Menu chính nếu muốn cấu hình cố định
+				linkKhác: { // Đổi url theo id đường dẫn
+					0: '/',
+				},
+				tênKhác: { // Đổi tên hiển thị theo id đường dẫn
+					0: "Trang chủ"
+				},
+				ụHỏiĐáp: [], // MẢng chứa id sử dụng giao diện gửi câu hỏi
+			};
+		$(function () {
+			tảiTrước({
+				dữLiệu: { // Sử dụng package riêng
+					js: ["package.hanu"],
+					css: ["package.all"]
+				},
+				biểuTượng: "https://i3.wp.com/cdn.inevn.com/img/serp-white.png",
+				chờ: 1067, //tạo độ trễ khi vào xem nội dung (đảm bảo nội dung render đầy đủ)
+				koChe: false, //không hiển thị
+				màuNền: "#673ab7", //Màu nền chờ
+				riêng: true, //tải theo thư viện khác
+				cache: true, //Tải cache các file package
+				trước: function () { // Gán cache,v.v....
+				},
+				xong: function () { // Viết code giao diện hiển thị
+					var pVi = phạmVi.lấy("i"),
+						ảPVi = Jd(config("phạmVi." + pVi + ".ấ"))["ể"],
+						ụTổng = data.ụTổng,
+						tinTiêuĐiểm = data.tinTiêuĐiểm,
+						ụHỏiĐáp = data.ụHỏiĐáp,
+						linkKhác = data.linkKhác,
+						thân = $("#nộiDungXem");
+					CẦN.db(["chuyênMục." + ụTổng, "chuyênLực." + ụTổng], function () {
+						// Lấy tất cả chuyên mục trên webiste
+						var allỤ = khôngGian.chuyênMục.sau(ụTổng) || [],
+							menuChính = $.gộp([0], config("chuyênLực." + ụTổng)),
+							ụ1 = 9263, //5007,
+							ụ2 = 9009,
+							ụ3 = 8909;
+						$(document).on("click", "a", function () {
+							var u = $(this).attr("href"),
+								a = $(this).attr("target");
+							// if (a) {
+							//     open(u,a);
+							// } else {
+							vàoURL(u);
+							// };
+							return false;
+						});
+						// Cấu hình các đường dẫn trên website
+						$.each({
+							// URL xử lý dữ liệu
+							xửLý: "https://cdn.inevn.com/xửLý",
+							// Trang chủ
+							0: function () {
+								$(".wrapper").empty().append( // prepend
+									// $("<a>", {
+									// 	class: "fwb tac lh15 bấmĐc",
+									// 	href: "/c/1/CM",
+									// 	text: "Chuyên mục"
+									// }),
+									// "Xin chào tất cả các bạn",
+									// `<div class="fwb">HTML</div>`,
+									$("<div>", {
+										class: "fwb tac lh15",
+										id: "a",
+										html: "Xin chào tất cả các bạn</br>"
+									}).append(
+										$("<div>", {
+											class: "fwb tac lh15",
+											id: "b",
+											html: "Xin chào tất cả các bạn</br>"
+										}),
+										$("<p>", {
+											class: "fwb tac lh15",
+											id: "b",
+											html: "Xin chào tất cả các bạn</br>"
+										}),
+										[1, 2, 3, 4].map(function (á, à) {
+											return $("<div>", {
+												class: "fwb tac lh15",
+												// id:á,
+												html: "Giá trị: " + á + " - Index: " + à
+											})
+										})
+									)
+								)
+							},
+							// Xem chuyên mục
+							c: function (i, x, y, z) {
+								cl("LOG", i, x, y, z);
+								$(".wrapper").append(
+									$("<div>", {
+										class: "fwb tac lh15",
+										// id:á,
+										text: "Đây là chuyên mục"
+									}),
+									$("<a>", {
+										class: "fwb tac lh15 bấmĐc",
+										href: "/",
+										text: "Trang chủ"
+									}),
+								)
+							},
+							// Xem bài viết
+							a: function (i) {
+
+							},
+							// Các đường link không được cấu hình
+							404: function () {
+								vàoURL("/")
+							}
+						}, function (á, à) {
+							config("url." + á, à);
+						});
+						// Vào ngay đường dẫn hiện tại
+						vàoURL();
+					})
+				}
+			});
+		});
+	</script>
+</head>
+
+<body class="ffa fs14p lh13 oxh styleScroll">
+	<div class="wrapper ffa"></div>
+</body>
+
+</html>
